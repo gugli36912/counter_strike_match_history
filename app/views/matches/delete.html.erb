@@ -1,0 +1,4 @@
+delete <%= @match.id %>?
+<%= form_for :match, :url => { :action => "destroy", :id => @match.id } do |f| %>
+<%= f.submit %>
+<% end %>

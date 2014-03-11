@@ -1,0 +1,8 @@
+<% @match.each do |m| %>
+<p><%= m.id %>
+<%= link_to("show", {:action => "show", :id => m.id}) %>
+<%= link_to("edit", {:action => "edit", :id => m.id}) %>
+<%= link_to("delete", {:action => "delete", :id => m.id}) %>
+<% end %>
+</p>
+</br></br></br><%= link_to("new", {:action => "new"}) %>
