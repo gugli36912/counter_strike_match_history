@@ -14,8 +14,8 @@ class MatchesController < ApplicationController
 
 	def update
 		@match = Match.find(params[:id])
-		@match = Match.update_attributes(post_params)
-		redirect_to(:action => "index")
+		@match.update_attributes(update_params)
+		redirect_to matches_path
 	end
 
 	def new
@@ -24,7 +24,7 @@ class MatchesController < ApplicationController
 
 	def create
 		@match = Match.new(post_params).save
-		redirect_to(:action => "index")
+		redirect_to matches_path
 	end
 
 	def delete
@@ -33,7 +33,7 @@ class MatchesController < ApplicationController
 
 	def destroy
 		@match = Match.find(params[:id]).destroy
-		redirect_to(:action => "index")
+		redirect_to matches_path
 	end
 
 private
